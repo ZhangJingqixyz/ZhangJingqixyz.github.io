@@ -2,7 +2,13 @@
 
 
 
-# 视觉SLAM
+# 视觉slam
+
+<details>
+    <summary>
+        <b><font face="微软雅黑" color="black" size="6.8" >笔记</font>
+    </summary>
+
 
 ## <span id='jump'>最好直接完整clone项目</span>
 
@@ -17,6 +23,8 @@ sudo apt install -y libglew-dev libpng-dev python3-dev
 ```
 
 重新编译安装
+
+
 
 ```
 cd slambook2/3rdparty/Pangolin
@@ -80,11 +88,17 @@ $ git submodule update --init --recursive
 1. 添加#include<Eigen/Geometry>
 2. string trajectory_file 需要更改
 
+</details>
 
 
-# typora下转跳到指定位置
 
-第一种：
+# Tips
+
+<details><summary><b><font face="微软雅黑" color="black" size="6.8" >Typora跳转</font></summary>
+
+
+## 第一种跳转：
+
 使用方括号[] 、(#锚点) 、a标签 、id 属性
 点击点：
 
@@ -95,7 +109,7 @@ $ git submodule update --init --recursive
 <a id="length">吃药休息</a>
 ```
 
-第二种：
+## 第二种跳转：
 
 使用方括号[] 、(#锚点) 、span标签 、id 属性
 
@@ -106,3 +120,22 @@ $ git submodule update --init --recursive
 <span id='jump'>医生说可以喝一点点</span>
 ```
 
+</details>
+
+
+
+<details><summary><b><font face="微软雅黑" color="black" size="6.8" >Typora转html时的多折叠问题</font></summary>
+
+## 第一种折叠
+
+在第一段折叠结束后输入强制回车
+
+```
+<bp>
+```
+
+这样后面的html代码可以多行输入
+
+## 第二种折叠
+
+html代码输入在同一行

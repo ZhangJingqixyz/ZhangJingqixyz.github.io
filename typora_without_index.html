@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>index</title>
+</head>
+<body><h1 id='hello-world'>Hello World!</h1>
+<p>&nbsp;</p>
+<h1 id='视觉slam笔记'>视觉slam笔记</h1>
+<details>
+    <summary>
+        <b><font face="微软雅黑" color="black" size="6.8" >视觉slam笔记</font>
+    </summary>
+<h2 id='最好直接完整clone项目'><span id='jump'>最好直接完整clone项目</span></h2>
+<pre><code>git clone --recursive-submodules https://github.com/gaoxiang12/slambook2.git
+</code></pre>
+<p>安装所有依赖</p>
+<pre><code>sudo apt install -y libglew-dev libpng-dev python3-dev
+</code></pre>
+<p>重新编译安装</p>
+<p>&nbsp;</p>
+<pre><code>cd slambook2/3rdparty/Pangolin
+mkdir build &amp;&amp; cd build
+cmake .. &amp;&amp; make &amp;&amp; sudo make install
+</code></pre>
+<p>编译ch3并运行</p>
+<p>如果是使用<a href='https://github.com/stevenlovegrove/Pangolin/'>原作者的库</a>，需要先运行<code>./scripts/install_prerequisites.sh --dry-run recommended</code>安装依赖后编译安装</p>
+<p>&nbsp;</p>
+<h2 id='ch3'>ch3 </h2>
+<h3 id='git-submodule-update---init---recursive出错提示子模组未对路径注册'>git submodule update --init --recursive出错提示子模组未对路径注册</h3>
+<p>因为我使用的git url格式与原项目下的.gitmodule文件中的url格式不对，它写的是https格式，而我使用的是git的格式。</p>
+<p>按照以下方法更换一下即可：</p>
+<pre><code>[submodule &quot;3rdparty/Pangolin&quot;]
+	path = 3rdparty/Pangolin
+	url = git@github.com:stevenlovegrove/Pangolin
+[submodule &quot;3rdparty/Sophus&quot;]
+	path = 3rdparty/Sophus
+	url = git@github.com:strasdat/Sophus
+[submodule &quot;3rdparty/ceres-solver&quot;]
+	path = 3rdparty/ceres-solver
+	url = git@github.com:ceres-solver/ceres-solver
+[submodule &quot;3rdparty/g2o&quot;]
+	path = 3rdparty/g2o
+	url = git@github.com:RainerKuemmerle/g2o
+[submodule &quot;3rdparty/DBoW3&quot;]
+	path = 3rdparty/DBoW3
+	url = git@github.com:rmsalinas/DBow3
+[submodule &quot;3rdparty/googletest&quot;]
+	path = 3rdparty/googletest
+	url = git@github.com:google/googletest.git
+</code></pre>
+<p>子模块的url同步修改</p>
+<pre><code>$ git submodule sync
+</code></pre>
+<p>最后再来：</p>
+<pre><code>$ git submodule update --init --recursive
+</code></pre>
+<p><a href='#jump'>最好直接完整clone项目</a></p>
+<p>&nbsp;</p>
+<h3 id='plottrajectorycpp'>plotTrajectory.cpp</h3>
+<ol start='' >
+<li>添加#include&lt;Eigen/Geometry&gt;</li>
+<li>string trajectory_file 需要更改</li>
+
+</ol>
+<p></details></p>
+<p>&nbsp;</p>
+<h1 id='typora技巧'>Typora技巧</h1>
+<details><summary><b><font face="微软雅黑" color="black" size="6.8" >Typora跳转</font></summary>
+<h2 id='第一种'>第一种：</h2>
+<p>使用方括号[] 、(#锚点) 、a标签 、id 属性
+点击点：</p>
+<pre><code>点击点：
+[1、感冒了](#length)
+调转到的点：
+&lt;a id=&quot;length&quot;&gt;吃药休息&lt;/a&gt;
+</code></pre>
+<h2 id='第二种'>第二种：</h2>
+<p>使用方括号[] 、(#锚点) 、span标签 、id 属性</p>
+<pre><code>点击点：
+[2、问医生可以喝奶茶吗](#jump)
+调转到的点：
+&lt;span id=&#39;jump&#39;&gt;医生说可以喝一点点&lt;/span&gt;
+</code></pre>
+<p>
+<p></details></p>
+</body>
+</html>
