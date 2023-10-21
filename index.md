@@ -140,6 +140,8 @@ $ git submodule update --init --recursive
 
 html代码输入在同一行
 
+</details>
+
 
 
 <details><summary><b><font face="微软雅黑" color="black" size="6.8" >LaTeX论文</font></summary>
@@ -477,3 +479,4 @@ html代码输入在同一行
 
 5,https://mp.weixin.qq.com/s/A7JgnwbJbWa-XoKtrsJmtg
 
+</details>
